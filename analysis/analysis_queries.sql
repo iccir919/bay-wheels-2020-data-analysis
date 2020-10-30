@@ -6,7 +6,7 @@ GROUP BY monthname(started_at), rideable_type
 ORDER BY total DESC;
 
 /* Total number of departures and arrivals by docking station */
-SELECT station_to_station_trips.station_id AS station_id, COUNT(*) AS count
+SELECT station_to_station_trips.station_id AS station_id, COUNT(*) AS total
 FROM
 (
 SELECT start_station_id AS station_id FROM bay_wheels_2020 WHERE start_station_id != 0
@@ -15,3 +15,17 @@ SELECT end_station_id AS station_id FROM bay_wheels_2020 WHERE end_station_id !=
 ) AS station_to_station_trips
 GROUP BY station_to_station_trips.station_id
 ORDER BY station_to_station_trips.station_id;
+
+/* Total number of departures by station */
+SELECT start_station_id AS station_id, COUNT(*) AS total
+FROM bay_wheels_2020 
+WHERE start_station_id != 0
+GROUP BY station_id
+ORDER BY station_id;
+
+/* Total number of arrivals by station */
+SELECT end_station_id AS station_id, COUNT(*) AS total
+FROM bay_wheels_2020 
+WHERE end_station_id != 0
+GROUP BY station_id
+ORDER BY station_id;
