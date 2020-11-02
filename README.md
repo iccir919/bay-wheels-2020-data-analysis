@@ -1,5 +1,7 @@
 # Bay Wheels 2020 Data Analysis
 
+This project is a data analysis of the [Bay Wheels system data](https://www.lyft.com/bikes/bay-wheels/system-data) for the year 2020. [I entered the data into a table](analaysis/table_creations.sql), bay_wheels_2020, on a local MySQL database. The data was queried with [MySQL commands](analysis/data_queries). I was able to easily export the data into JSON with the [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/) application.
+
 ## Bay Wheels API Feeds
  - {"name":"system_information","url":"https://gbfs.baywheels.com/gbfs/en/system_information.json"}
  - "name":"station_information","url":"https://gbfs.baywheels.com/gbfs/en/station_information.json"}

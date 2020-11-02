@@ -1108,7 +1108,7 @@ new Chart(
 					"label":"Daily total number of trips",
 					"data": tripsByDay.map((row) => row.total),
 					"backgroundColor": 'rgb(255, 99, 132)',
-					"borderColor":"rgb(75, 192, 192)",
+					"borderColor":"rgb(255, 99, 132)",
 					"lineTension":0.1
 				}
 			]
