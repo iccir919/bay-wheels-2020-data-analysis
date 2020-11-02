@@ -1,6 +1,8 @@
 # Bay Wheels 2020 Data Analysis
 
-This project is a data analysis of the [Bay Wheels system data](https://www.lyft.com/bikes/bay-wheels/system-data) for the year 2020. [I entered the data into a table](analaysis/table_creations.sql), bay_wheels_2020, on a local MySQL database. The data was queried with [MySQL commands](analysis/data_queries). I was able to easily export the data into JSON with the [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/) application.
+This project is a data analysis of the [Bay Wheels system data](https://www.lyft.com/bikes/bay-wheels/system-data) for the year 2020. [I entered the data into a table](analysis/table_creations.sql), bay_wheels_2020, on a local MySQL database. The data was queried with [MySQL commands](analysis/data_queries.sql). I was able to easily export the data into JSON with the [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/) application.
+
+## [Live version](https://iccir919.github.io/bay-wheels-2020-data-analysis/public/index.html)
 
 ## Bay Wheels API Feeds
  - {"name":"system_information","url":"https://gbfs.baywheels.com/gbfs/en/system_information.json"}
@@ -16,3 +18,5 @@ This project is a data analysis of the [Bay Wheels system data](https://www.lyft
 ## Helpful Resources
 - [How to import a CSV file into a MySQL database?](https://medium.com/@AviGoom/how-to-import-a-csv-file-into-a-mysql-database-ef8860878a68)
 - [ERROR: Loading local data is disabled - this must be enabled on both the client and server sides](https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client)
+- [MySQL Functions](https://www.w3schools.com/sql/sql_ref_mysql.asp)
+- [Find distance between two points using latitude and longitude in MySQL](https://stackoverflow.com/questions/24370975/find-distance-between-two-points-using-latitude-and-longitude-in-mysql)
