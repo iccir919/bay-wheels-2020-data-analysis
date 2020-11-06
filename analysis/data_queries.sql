@@ -1,3 +1,9 @@
+/* 
+    Cure for the following error message:
+    ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column
+*/
+SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
 /* Total number of trips */
 SELECT COUNT(*)
 FROM bay_wheels_2020;
@@ -87,13 +93,23 @@ FROM bay_wheels_2020
 GROUP BY day
 ORDER BY day;
 
-/* INCOMPLETE: Most popular routes */
+/* Most popular routes between stations */
 SELECT 
     CASE
         WHEN start_station_name < end_station_name 
             THEN CONCAT(start_station_name, ' - ', end_station_name)
         ELSE
             CONCAT(end_station_name, ' - ', start_station_name)
-    END AS trip_route
+    END AS trip_route,
+    start_lat,
+    start_lng,
+    end_lat,
+    end_lng,
+    COUNT(*) as total
 FROM bay_wheels_2020
-LIMIT 10;
+WHERE
+    start_station_id NOT IN (0, 449)  
+    AND end_station_id NOT IN (0, 449)
+GROUP BY trip_route
+ORDER BY total DESC
+LIMIT 100;

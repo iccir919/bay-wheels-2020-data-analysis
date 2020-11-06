@@ -26,7 +26,7 @@
 
     <body> 
         <div class="d-flex align-items-center justify-content-center bg-white border-bottom box-shadow">
-            <img class="navbar-brand" src="assets/Bay_Wheels_logo.png" width="150" height="65" alt="" loading="lazy">
+            <img class="navbar-brand" src="assets/images/Bay_Wheels_logo.png" width="150" height="65" alt="" loading="lazy">
             <h5 class="my-0 font-weight-normal">2020 Data Analysis</h5>
         </div>
 
@@ -36,14 +36,14 @@
                 <p class="lead font-weight-normal">Let's face it, this year has not been easy. Come take a look at the effects of this year's challenges on the Bay Wheels bike share system.</p>
                 <a class="btn btn-outline-secondary disabled" href="#">More analysis coming soon!</a>
             </div>
-            <img src="assets/bike.png" class="header-bike-image box-shadow d-none d-lg-block"></img>
-            <img src="assets/bike.png" class="header-bike-image header-bike-image-2 box-shadow d-none d-lg-block"></img>
+            <img src="assets/images/bike.png" class="header-bike-image box-shadow d-none d-lg-block"></img>
+            <img src="assets/images/bike.png" class="header-bike-image header-bike-image-2 box-shadow d-none d-lg-block"></img>
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h1 class="display-4">Quick Facts</h1>
+                    <h1 class="display-5">Quick Facts</h1>
                 </div>
                 <div class="col-sm-3">
                     <div class="card">
@@ -51,9 +51,6 @@
                         <h5 class="card-title">Total number of trips</h5>
                         <p class="h3">1,737,182</p>
                       </div>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Jan. 1, 2020 - Sep. 30, 2020
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -63,9 +60,6 @@
                         <p class="h3">1.2002 miles</p>
                       </div>
                     </div>
-                    <div class="card-footer text-muted">
-                        Jan. 1, 2020 - Sep. 30, 2020
-                    </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card">
@@ -73,9 +67,6 @@
                         <h5 class="card-title">Average trip duration</h5>
                         <p class="h4">20 min. and 7 sec.</p>
                       </div>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Jan. 1, 2020 - Sep. 30, 2020
                     </div>
                 </div>
             </div>
@@ -102,6 +93,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
         <!-- Data visualization charts -->
-        <script src="charts/tripsByDay.js"></script>
+        <script src="assets/data/total-trips/by_day.js"></script>
+        <script src="assets/scripts/charts/tripsByDay.js"></script>
+        
+        <!-- Mapp.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
+        <script src="assets/scripts/mappa.js" type="text/javascript"></script>
     </body>
 </html>
