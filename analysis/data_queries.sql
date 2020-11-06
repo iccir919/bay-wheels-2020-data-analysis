@@ -101,8 +101,10 @@ SELECT
         ELSE
             CONCAT(end_station_name, ' - ', start_station_name)
     END AS trip_route,
+    start_station_name,
     start_lat,
     start_lng,
+    end_station_name,
     end_lat,
     end_lng,
     COUNT(*) as total
