@@ -8,11 +8,11 @@ const options = {
     lat: 37.780033,
     lng: -122.425400,
     zoom: 12.45,
-    style: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+    style: 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png'
 }
 
 function setup() {
-    popularRoutesStationToStationCanvas = createCanvas(500, 400);
+    popularRoutesStationToStationCanvas = createCanvas(330, 400);
     popularRoutesStationToStationCanvas.parent("#popular-routes-station-to-station-map");
     
     // Create a tile map and overlay the canvas on top.
@@ -37,7 +37,7 @@ function draw() {
             const radiusValue = map(row.total, 135, 1197, 1, 10);
             ellipse(startPos.x, startPos.y, radiusValue, radiusValue);
         } else {
-            stroke('rgba(255, 0, 200, 0.5)');
+            stroke('rgba(255, 0, 200, 0.25)');
             const lineStrokeValue = map(row.total, 135, 1197, 1, 15);
             strokeWeight(lineStrokeValue)
             line(startPos.x, startPos.y, endPos.x, endPos.y);
