@@ -1,4 +1,5 @@
 const table = document.getElementById("most-popular-stations-table");
+const tableBody = document.createElement("tbody");
 
 for (let i = 0; i < mostPopularStationsData.length; i++) {
     const row = document.createElement("tr");
@@ -10,5 +11,7 @@ for (let i = 0; i < mostPopularStationsData.length; i++) {
         <td>${data.total}</td>
     `;
 
-    table.append(row);
+    tableBody.append(row);
 }
+
+table.append(tableBody)

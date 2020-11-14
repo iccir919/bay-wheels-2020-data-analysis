@@ -33,11 +33,11 @@ html, body {
     left: 5%;
 }
 
-#covid-effect-description {
+#covid-effect-description, .table .thead-dark th {
     background-color: #8B37FF;
 }
 
 #most-popular-stations-container {
-    max-height: 425px;
+    max-height: 450px;
     overflow: auto
 }
