@@ -4,6 +4,9 @@ This project is a data analysis of the [Bay Wheels system data](https://www.lyft
 
 ## [Live version](https://iccir919.github.io/bay-wheels-2020-data-analysis/public/index.html)
 
+## To Do
+- [ ] Reformat data. Do a "Replace All" for "member," or "casual," values and remove the comma from all of them
+
 ## Bay Wheels API Feeds
  - {"name":"system_information","url":"https://gbfs.baywheels.com/gbfs/en/system_information.json"}
  - "name":"station_information","url":"https://gbfs.baywheels.com/gbfs/en/station_information.json"}

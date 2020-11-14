@@ -25,10 +25,9 @@ function draw() {
 
     for (let i = 0; i < popularRoutesStationToStationData.length; i++) {
         const row = popularRoutesStationToStationData[i];
-
         const startPos = popularRoutesStationToStationMap.latLngToPixel(row.start_lat, row.start_lng);
         const endPos =  popularRoutesStationToStationMap.latLngToPixel(row.end_lat, row.end_lng);
-
+        
         if (
             startPos.x === endPos.x
             && startPos.x === endPos.x

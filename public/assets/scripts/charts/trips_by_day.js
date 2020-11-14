@@ -3,7 +3,7 @@ new Chart(
 	{
 		"type":"bar",
 		"data":{
-			"labels": tripsByDay.map((row) => row.day),
+			"labels": tripsByDay.map((row) => "" + row.day),
 			"datasets":[
 				{
 					"label":"Daily total number of trips",

@@ -26,7 +26,7 @@ WHERE
     start_station_id NOT IN (0, 449) AND 
     end_station_id NOT IN (0, 449);
 
-/* Total rides per month (April - September) by bike type, electrical or traditional */
+/* Total rides per month (April - October) by bike type, electrical or traditional */
 SELECT monthname(started_at), rideable_type, count(*) AS total
 FROM bay_wheels_2020
 WHERE rideable_type IS NOT NULL
@@ -42,18 +42,6 @@ SELECT
     COUNT(*) AS total
 FROM bay_wheels_2020 
 WHERE start_station_id != 0
-GROUP BY station_id
-ORDER BY station_id;
-
-/* Total number of arrivals by station */
-SELECT 
-    end_station_id AS station_id, 
-    end_station_name AS station_name,
-    end_lat AS station_lat,
-    end_lng AS station_lng,
-    COUNT(*) AS total
-FROM bay_wheels_2020 
-WHERE end_station_id != 0
 GROUP BY station_id
 ORDER BY station_id;
 
@@ -83,7 +71,7 @@ JOIN (
 ) AS station_info 
 ON station_info.end_station_id = station_activity_by_id.station_id
 GROUP BY station_activity_by_id.station_id
-ORDER BY station_activity_by_id.station_id;
+ORDER BY total;
 
 /* Total number of trips per day */
 SELECT 
@@ -115,3 +103,13 @@ WHERE
 GROUP BY trip_route
 ORDER BY total DESC
 LIMIT 100;
+
+
+/* Number of rides by rider type and day of week */
+SELECT 
+    member_casual,
+    DAYNAME(started_at) AS day,
+    COUNT(*) AS total
+FROM 
+    bay_wheels_2020
+GROUP BY member_casual, day;
