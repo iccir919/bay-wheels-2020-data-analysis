@@ -5,14 +5,14 @@ const mappa = new Mappa('Leaflet');
 
 // Options for map
 const options = {
-    lat: 37.780033,
-    lng: -122.425400,
-    zoom: 12.45,
+    lat: 37.792196,
+    lng: -122.402290,
+    zoom: 13.1,
     style: 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png'
 }
 
 function setup() {
-    popularRoutesStationToStationCanvas = createCanvas(330, 400);
+    popularRoutesStationToStationCanvas = createCanvas(330, 450);
     popularRoutesStationToStationCanvas.parent("#popular-routes-station-to-station-map");
     
     // Create a tile map and overlay the canvas on top.

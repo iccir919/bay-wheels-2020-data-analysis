@@ -36,3 +36,8 @@ html, body {
 #covid-effect-description {
     background-color: #8B37FF;
 }
+
+#most-popular-stations-container {
+    max-height: 425px;
+    overflow: auto
+}
