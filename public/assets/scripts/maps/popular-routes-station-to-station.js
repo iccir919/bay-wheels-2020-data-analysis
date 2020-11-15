@@ -11,6 +11,9 @@ const options = {
     style: 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png'
 }
 
+// Station associated with a mouseover on a row from the popular station table
+let mouseoveredPopularStationID;
+
 function setup() {
     popularRoutesStationToStationCanvas = createCanvas(330, 450);
     popularRoutesStationToStationCanvas.parent("#popular-routes-station-to-station-map");
@@ -18,6 +21,14 @@ function setup() {
     // Create a tile map and overlay the canvas on top.
     popularRoutesStationToStationMap = mappa.tileMap(options);
     popularRoutesStationToStationMap.overlay(popularRoutesStationToStationCanvas);
+
+    const popularStationRows = document.querySelectorAll(".popular-station-row");
+    popularStationRows.forEach((row) => row.addEventListener("mouseover", function(){
+        mouseoveredPopularStationID = Number(this.getAttribute("data-station-id"));
+    }));
+    popularStationRows.forEach((row) => row.addEventListener("mouseout", function(){
+        mouseoveredPopularStationID = undefined;
+    }));
 }
 
 function draw() {
@@ -41,5 +52,16 @@ function draw() {
             strokeWeight(lineStrokeValue)
             line(startPos.x, startPos.y, endPos.x, endPos.y);
         }
+    }
+
+    if (mouseoveredPopularStationID) {
+        const targetStation = mostPopularStationsData.find((station) => station.station_id === mouseoveredPopularStationID);
+        popularRoutesStationToStationMap.map.flyTo([targetStation.station_lat, targetStation.station_lng], 14);
+
+
+        const radiusValue = 20;
+        fill('#8B37FF');
+        const coords =  popularRoutesStationToStationMap.latLngToPixel(targetStation.station_lat, targetStation.station_lng);
+        ellipse(coords.x, coords.y, radiusValue, radiusValue);  
     }
 }

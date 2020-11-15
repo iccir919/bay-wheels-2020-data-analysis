@@ -35,9 +35,23 @@ html, body {
 
 #covid-effect-description, .table .thead-dark th {
     background-color: #8B37FF;
+    border-color:  #8B37FF;
 }
 
 #most-popular-stations-container {
     max-height: 450px;
     overflow: auto
+}
+
+.popular-station-row {
+    background-color: #f4ecff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fdd1f4;
+}
+
+footer a {
+    color: #8b37ff;
+    font-weight: bold;
 }

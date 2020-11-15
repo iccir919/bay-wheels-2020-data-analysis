@@ -24,6 +24,17 @@ new Chart(
 						}
 					}
 				}]
+			},
+			tooltips: {
+				callbacks: {
+					title: function(tooltipItem) {
+						tooltipItem = tooltipItem[0]
+						return moment(tooltipItem.xLabel).format("MMM Do YYYY")
+					},
+					label: function(tooltipItem) {
+						return `Total number of trips: ${tooltipItem.yLabel.toLocaleString()}`
+					}
+				}
 			}
 		}
 	}
